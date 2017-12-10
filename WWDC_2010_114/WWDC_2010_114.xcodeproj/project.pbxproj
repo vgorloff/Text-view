@@ -12,9 +12,9 @@
 		6173693B11A1DF2A003A3B87 /* LineFoldingGlyphGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6173693A11A1DF2A003A3B87 /* LineFoldingGlyphGenerator.m */; };
 		6173696011A1FB38003A3B87 /* LineFoldingTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6173695F11A1FB38003A3B87 /* LineFoldingTextStorage.m */; };
 		61CD897511A227F4003CB842 /* LineFoldingTextAttachmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CD897411A227F4003CB842 /* LineFoldingTextAttachmentCell.m */; };
+		80B20C851FDDB14000481C67 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B20C841FDDB14000481C67 /* Cocoa.framework */; };
 		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		9B07A3BE119E2C2200FB8F0A /* LineFoldingTypesetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07A3BD119E2C2200FB8F0A /* LineFoldingTypesetter.m */; };
 		9B07A3C4119E2FA300FB8F0A /* LineFoldingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07A3C3119E2FA300FB8F0A /* LineFoldingTextView.m */; };
 		9B07A3F2119E375200FB8F0A /* LineFoldingLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07A3F1119E375200FB8F0A /* LineFoldingLayoutManager.m */; };
@@ -22,20 +22,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1DDD58290DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MyDocument.xib; sourceTree = "<group>"; };
 		1DDD582B0DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
 		2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		6173693911A1DF2A003A3B87 /* LineFoldingGlyphGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingGlyphGenerator.h; sourceTree = "<group>"; };
 		6173693A11A1DF2A003A3B87 /* LineFoldingGlyphGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFoldingGlyphGenerator.m; sourceTree = "<group>"; };
 		6173695E11A1FB38003A3B87 /* LineFoldingTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTextStorage.h; sourceTree = "<group>"; };
 		6173695F11A1FB38003A3B87 /* LineFoldingTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFoldingTextStorage.m; sourceTree = "<group>"; };
 		61CD897311A227F4003CB842 /* LineFoldingTextAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTextAttachmentCell.h; sourceTree = "<group>"; };
 		61CD897411A227F4003CB842 /* LineFoldingTextAttachmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFoldingTextAttachmentCell.m; sourceTree = "<group>"; };
+		80B20C841FDDB14000481C67 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* Simple Editor WWDC10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Editor WWDC10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B07A3BC119E2C2200FB8F0A /* LineFoldingTypesetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTypesetter.h; sourceTree = "<group>"; };
@@ -53,30 +51,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+				80B20C851FDDB14000481C67 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
-				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
 		19C28FB0FE9D524F11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +111,7 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
-				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+				80B20C841FDDB14000481C67 /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
