@@ -47,6 +47,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString *lineFoldingAttributeName;
 
 @interface LineFoldingLayoutManager : NSLayoutManager {
 

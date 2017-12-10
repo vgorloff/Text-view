@@ -61,12 +61,14 @@ class LineFoldingTypesetter: NSATSTypesetter {
    }
 
    override func layoutParagraph(at lineFragmentOrigin: UnsafeMutablePointer<NSPoint>) -> Int {
-      let selector = Selector("setLineFoldingEnabled:")
-      let attrString = attributedString?.responds(to: selector) == true ? attributedString : nil
-      attrString?.perform(selector, with: true)
-      let result = super.layoutParagraph(at: lineFragmentOrigin)
-      attrString?.perform(selector, with: false)
-      return result
+      if let value = attributedString as? LineFoldingTextStorage {
+         value.lineFoldingEnabled = true
+         let result = super.layoutParagraph(at: lineFragmentOrigin)
+         value.lineFoldingEnabled = false
+         return result
+      } else {
+         return super.layoutParagraph(at: lineFragmentOrigin)
+      }
    }
 
 }

@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		1DDD582C0DA1D0D100B32029 /* MyDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* MyDocument.xib */; };
 		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
-		6173696011A1FB38003A3B87 /* LineFoldingTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6173695F11A1FB38003A3B87 /* LineFoldingTextStorage.m */; };
 		61CD897511A227F4003CB842 /* LineFoldingTextAttachmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CD897411A227F4003CB842 /* LineFoldingTextAttachmentCell.m */; };
 		80B20C851FDDB14000481C67 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B20C841FDDB14000481C67 /* Cocoa.framework */; };
 		80B20C881FDDB24800481C67 /* LineFoldingGlyphGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20C871FDDB24800481C67 /* LineFoldingGlyphGenerator.swift */; };
 		80B20C8A1FDDB51D00481C67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20C891FDDB51D00481C67 /* Constants.swift */; };
 		80B20C8C1FDDC45700481C67 /* LineFoldingTypesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20C8B1FDDC45700481C67 /* LineFoldingTypesetter.swift */; };
+		80B20C8E1FDDD70C00481C67 /* LineFoldingTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20C8D1FDDD70C00481C67 /* LineFoldingTextStorage.swift */; };
 		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		9B07A3C4119E2FA300FB8F0A /* LineFoldingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07A3C3119E2FA300FB8F0A /* LineFoldingTextView.m */; };
@@ -28,8 +28,6 @@
 		2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
 		2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6173695E11A1FB38003A3B87 /* LineFoldingTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTextStorage.h; sourceTree = "<group>"; };
-		6173695F11A1FB38003A3B87 /* LineFoldingTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFoldingTextStorage.m; sourceTree = "<group>"; };
 		61CD897311A227F4003CB842 /* LineFoldingTextAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTextAttachmentCell.h; sourceTree = "<group>"; };
 		61CD897411A227F4003CB842 /* LineFoldingTextAttachmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFoldingTextAttachmentCell.m; sourceTree = "<group>"; };
 		80B20C841FDDB14000481C67 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -37,6 +35,7 @@
 		80B20C871FDDB24800481C67 /* LineFoldingGlyphGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFoldingGlyphGenerator.swift; sourceTree = "<group>"; };
 		80B20C891FDDB51D00481C67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		80B20C8B1FDDC45700481C67 /* LineFoldingTypesetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFoldingTypesetter.swift; sourceTree = "<group>"; };
+		80B20C8D1FDDD70C00481C67 /* LineFoldingTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFoldingTextStorage.swift; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* Simple Editor WWDC10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Editor WWDC10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B07A3C2119E2FA300FB8F0A /* LineFoldingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTextView.h; sourceTree = "<group>"; };
@@ -126,8 +125,7 @@
 				9B07A3F1119E375200FB8F0A /* LineFoldingLayoutManager.m */,
 				61CD897311A227F4003CB842 /* LineFoldingTextAttachmentCell.h */,
 				61CD897411A227F4003CB842 /* LineFoldingTextAttachmentCell.m */,
-				6173695E11A1FB38003A3B87 /* LineFoldingTextStorage.h */,
-				6173695F11A1FB38003A3B87 /* LineFoldingTextStorage.m */,
+				80B20C8D1FDDD70C00481C67 /* LineFoldingTextStorage.swift */,
 				9B07A3C2119E2FA300FB8F0A /* LineFoldingTextView.h */,
 				9B07A3C3119E2FA300FB8F0A /* LineFoldingTextView.m */,
 				80B20C8B1FDDC45700481C67 /* LineFoldingTypesetter.swift */,
@@ -208,10 +206,10 @@
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
 				80B20C8C1FDDC45700481C67 /* LineFoldingTypesetter.swift in Sources */,
 				B998122E1199DC8F00455192 /* LineNumbersRulerView.m in Sources */,
+				80B20C8E1FDDD70C00481C67 /* LineFoldingTextStorage.swift in Sources */,
 				9B07A3C4119E2FA300FB8F0A /* LineFoldingTextView.m in Sources */,
 				9B07A3F2119E375200FB8F0A /* LineFoldingLayoutManager.m in Sources */,
 				80B20C881FDDB24800481C67 /* LineFoldingGlyphGenerator.swift in Sources */,
-				6173696011A1FB38003A3B87 /* LineFoldingTextStorage.m in Sources */,
 				61CD897511A227F4003CB842 /* LineFoldingTextAttachmentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

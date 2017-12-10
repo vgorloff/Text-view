@@ -48,7 +48,6 @@
 #import "LineFoldingTextView.h"
 #import "Simple_Editor_WWDC10-Swift.h"
 #import "LineFoldingLayoutManager.h"
-#import "LineFoldingTextStorage.h"
 #import "LineFoldingTextAttachmentCell.h"
 
 @interface LineFoldingAnimationOverlay : NSView {

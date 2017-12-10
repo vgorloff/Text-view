@@ -47,7 +47,7 @@
 
 #import "MyDocument.h"
 #import "LineNumbersRulerView.h"
-#import "LineFoldingTextStorage.h"
+#import "Simple_Editor_WWDC10-Swift.h"
 
 @implementation MyDocument
 

@@ -46,8 +46,9 @@
  */
 
 #import "LineFoldingLayoutManager.h"
-#import "LineFoldingTextStorage.h"
 #import "Simple_Editor_WWDC10-Swift.h"
+
+NSString *lineFoldingAttributeName = @"lineFoldingAttributeName";
 
 @implementation LineFoldingLayoutManager
 - (instancetype)init {

@@ -47,7 +47,7 @@
 
 #import "LineFoldingTextAttachmentCell.h"
 #import "LineFoldingTextView.h"
-#import "LineFoldingTextStorage.h"
+#import "Simple_Editor_WWDC10-Swift.h"
 
 #define HorizontalInset (4.0)
 #define VerticalInset (1.0)
