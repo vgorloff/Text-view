@@ -103,6 +103,11 @@
                             <action selector="toggleLineNumbers:" target="-1" id="100054"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="9D3A7842-3517-450D-9A6E-67EDFD2A6DA5" label="Fold Lines" paletteLabel="Fold Lines" tag="-1" image="NSApplicationIcon" id="X3g-du-be9">
+                        <connections>
+                            <action selector="foldSelectedLines:" target="-1" id="Spp-7d-XG8"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarSeparatorItem" id="100050"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="100051"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="100048"/>
@@ -113,6 +118,7 @@
                 <defaultToolbarItems>
                     <toolbarItem reference="100045"/>
                     <toolbarItem reference="100053"/>
+                    <toolbarItem reference="X3g-du-be9"/>
                     <toolbarItem reference="100051"/>
                     <toolbarItem reference="100048"/>
                     <toolbarItem reference="100049"/>
