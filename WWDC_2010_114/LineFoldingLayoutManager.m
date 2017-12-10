@@ -47,8 +47,8 @@
 
 #import "LineFoldingLayoutManager.h"
 #import "LineFoldingTypesetter.h"
-#import "LineFoldingGlyphGenerator.h"
 #import "LineFoldingTextStorage.h"
+#import "Simple_Editor_WWDC10-Swift.h"
 
 @implementation LineFoldingLayoutManager
 - (instancetype)init {

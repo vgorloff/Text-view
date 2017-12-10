@@ -1,15 +1,15 @@
 /*
-     File: LineFoldingGlyphGenerator.m
+ File: LineFoldingGlyphGenerator.swift
  Abstract: NSGlyphGenerator subclass illustrating custom glyph generation technique.
-  Version: 1.0
- 
+ Version: 1.0
+
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
  terms, and your use, installation, modification or redistribution of
  this Apple software constitutes acceptance of these terms.  If you do
  not agree with these terms, please do not use, install, modify or
  redistribute this Apple software.
- 
+
  In consideration of your agreement to abide by the following terms, and
  subject to these terms, Apple grants you a personal, non-exclusive
  license, under Apple's copyrights in this original Apple software (the
@@ -25,13 +25,13 @@
  implied, are granted by Apple herein, including but not limited to any
  patent rights that may be infringed by your derivative works or by other
  works in which the Apple Software may be incorporated.
- 
+
  The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
  MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
  THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
  FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
  OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
- 
+
  IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
@@ -40,51 +40,56 @@
  AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
- 
+
  Copyright (C) 2010 Apple Inc. All Rights Reserved.
- 
  */
 
-#import "LineFoldingGlyphGenerator.h"
-#import "LineFoldingTypesetter.h"
+/// File created by Vlad Gorlov on 10.12.17 from file LineFoldingGlyphGenerator.m
 
-@implementation LineFoldingGlyphGenerator
-- (void)generateGlyphsForGlyphStorage:(id <NSGlyphStorage>)glyphStorage desiredNumberOfCharacters:(NSUInteger)nChars glyphIndex:(NSUInteger *)glyphIndex characterIndex:(NSUInteger *)charIndex {
+import Cocoa
 
-    // Stash the original requester
-    _destination = glyphStorage;
-    [[NSGlyphGenerator sharedGlyphGenerator] generateGlyphsForGlyphStorage:self desiredNumberOfCharacters:nChars glyphIndex:glyphIndex characterIndex:charIndex];
-    _destination = nil;
+class LineFoldingGlyphGenerator: NSGlyphGenerator {
+
+   private var destination: NSGlyphStorage! // the original glyph generation requester
+
+   override func generateGlyphs(for glyphStorage: NSGlyphStorage, desiredNumberOfCharacters nChars: Int,
+                                glyphIndex: UnsafeMutablePointer<Int>?, characterIndex charIndex: UnsafeMutablePointer<Int>?) {
+      destination = glyphStorage
+      NSGlyphGenerator.shared.generateGlyphs(for: self, desiredNumberOfCharacters: nChars, glyphIndex: glyphIndex, characterIndex: charIndex)
+      destination = nil
+   }
 }
 
-// NSGlyphStorage interface
-- (void)insertGlyphs:(const NSGlyph *)glyphs length:(NSUInteger)length forStartingGlyphAtIndex:(NSUInteger)glyphIndex characterIndex:(NSUInteger)charIndex {
-    id attribute;
-    NSRange effectiveRange;
-    NSGlyph *buffer = NULL;
+extension LineFoldingGlyphGenerator: NSGlyphStorage {
 
-    attribute = [[self attributedString] attribute:lineFoldingAttributeName atIndex:charIndex longestEffectiveRange:&effectiveRange inRange:NSMakeRange(0, charIndex + length)];
+   func insertGlyphs(_ glyphs: UnsafePointer<NSGlyph>, length: Int, forStartingGlyphAt glyphIndex: Int, characterIndex charIndex: Int) {
 
-    if (attribute && [attribute boolValue]) {
-        NSInteger size = sizeof(NSGlyph) * length;
-        NSGlyph aGlyph = NSNullGlyph;
-        buffer = NSZoneMalloc(NULL, size);
-        memset_pattern4(buffer, &aGlyph, size);
+      var effectiveRange: NSRange = NSMakeRange(0, 0)
+      let attribute = self.attributedString().attribute(Constants.lineFoldingAttributeName, at: charIndex,
+                                                        longestEffectiveRange: &effectiveRange, in: NSMakeRange(0, charIndex + length))
+      if let value = attribute as? Bool, value == true {
+         let glyphsStorage = UnsafeMutablePointer<NSGlyph>.allocate(capacity: length)
+         glyphsStorage.initialize(to: NSGlyph(NSNullGlyph), count: length)
+         if effectiveRange.location == charIndex {
+            glyphsStorage[0] = NSGlyph(NSControlGlyph)
+         }
+         destination.insertGlyphs(glyphsStorage, length: length, forStartingGlyphAt: glyphIndex, characterIndex: charIndex)
+         glyphsStorage.deinitialize(count: length)
+         glyphsStorage.deallocate(capacity: length)
+      } else {
+         destination.insertGlyphs(glyphs, length: length, forStartingGlyphAt: glyphIndex, characterIndex: charIndex)
+      }
+   }
 
-        if (effectiveRange.location == charIndex) buffer[0] = NSControlGlyph;
-        glyphs = buffer;
-    }
+   func setIntAttribute(_ attributeTag: Int, value val: Int, forGlyphAt glyphIndex: Int) {
+      destination.setIntAttribute(attributeTag, value: val, forGlyphAt: glyphIndex)
+   }
 
-    [_destination insertGlyphs:glyphs length:length forStartingGlyphAtIndex:glyphIndex characterIndex:charIndex];
+   func attributedString() -> NSAttributedString {
+      return destination.attributedString()
+   }
 
-    if (buffer) NSZoneFree(NULL, buffer);
+   func layoutOptions() -> Int {
+      return destination.layoutOptions()
+   }
 }
-
-- (void)setIntAttribute:(NSInteger)attributeTag value:(NSInteger)val forGlyphAtIndex:(NSUInteger)glyphIndex {
-    [_destination setIntAttribute:attributeTag value:val forGlyphAtIndex:glyphIndex];
-}
-
-- (NSAttributedString *)attributedString { return [_destination attributedString]; }
-
-- (NSUInteger)layoutOptions { return [_destination layoutOptions]; }
-@end
