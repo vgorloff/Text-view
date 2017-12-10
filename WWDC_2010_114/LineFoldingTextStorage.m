@@ -46,11 +46,13 @@
  */
 
 #import "LineFoldingTextStorage.h"
-#import "LineFoldingTypesetter.h"
 #import "LineFoldingTextAttachmentCell.h"
+#import "Simple_Editor_WWDC10-Swift.h"
 
 @implementation LineFoldingTextStorage
 @synthesize lineFoldingEnabled = _lineFoldingEnabled;
+
+NSString *lineFoldingAttributeName = @"lineFoldingAttributeName";
 
 static NSTextAttachment *sharedAttachment = nil;
 

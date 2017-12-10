@@ -47,6 +47,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString *lineFoldingAttributeName;
 
 @interface LineFoldingTextStorage : NSTextStorage {
     NSTextStorage *_attributedString;

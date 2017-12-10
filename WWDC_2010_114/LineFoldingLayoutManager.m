@@ -46,7 +46,6 @@
  */
 
 #import "LineFoldingLayoutManager.h"
-#import "LineFoldingTypesetter.h"
 #import "LineFoldingTextStorage.h"
 #import "Simple_Editor_WWDC10-Swift.h"
 

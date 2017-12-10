@@ -14,9 +14,9 @@
 		80B20C851FDDB14000481C67 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B20C841FDDB14000481C67 /* Cocoa.framework */; };
 		80B20C881FDDB24800481C67 /* LineFoldingGlyphGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20C871FDDB24800481C67 /* LineFoldingGlyphGenerator.swift */; };
 		80B20C8A1FDDB51D00481C67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20C891FDDB51D00481C67 /* Constants.swift */; };
+		80B20C8C1FDDC45700481C67 /* LineFoldingTypesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B20C8B1FDDC45700481C67 /* LineFoldingTypesetter.swift */; };
 		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		9B07A3BE119E2C2200FB8F0A /* LineFoldingTypesetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07A3BD119E2C2200FB8F0A /* LineFoldingTypesetter.m */; };
 		9B07A3C4119E2FA300FB8F0A /* LineFoldingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07A3C3119E2FA300FB8F0A /* LineFoldingTextView.m */; };
 		9B07A3F2119E375200FB8F0A /* LineFoldingLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07A3F1119E375200FB8F0A /* LineFoldingLayoutManager.m */; };
 		B998122E1199DC8F00455192 /* LineNumbersRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B998122D1199DC8F00455192 /* LineNumbersRulerView.m */; };
@@ -36,10 +36,9 @@
 		80B20C861FDDB24800481C67 /* WWDC_2010_114-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WWDC_2010_114-Bridging-Header.h"; sourceTree = "<group>"; };
 		80B20C871FDDB24800481C67 /* LineFoldingGlyphGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFoldingGlyphGenerator.swift; sourceTree = "<group>"; };
 		80B20C891FDDB51D00481C67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		80B20C8B1FDDC45700481C67 /* LineFoldingTypesetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFoldingTypesetter.swift; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* Simple Editor WWDC10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Editor WWDC10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B07A3BC119E2C2200FB8F0A /* LineFoldingTypesetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTypesetter.h; sourceTree = "<group>"; };
-		9B07A3BD119E2C2200FB8F0A /* LineFoldingTypesetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFoldingTypesetter.m; sourceTree = "<group>"; };
 		9B07A3C2119E2FA300FB8F0A /* LineFoldingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingTextView.h; sourceTree = "<group>"; };
 		9B07A3C3119E2FA300FB8F0A /* LineFoldingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFoldingTextView.m; sourceTree = "<group>"; };
 		9B07A3F0119E375200FB8F0A /* LineFoldingLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFoldingLayoutManager.h; sourceTree = "<group>"; };
@@ -121,19 +120,18 @@
 		9B07A3BB119E2C0900FB8F0A /* LineFolding */ = {
 			isa = PBXGroup;
 			children = (
-				6173695E11A1FB38003A3B87 /* LineFoldingTextStorage.h */,
-				6173695F11A1FB38003A3B87 /* LineFoldingTextStorage.m */,
+				80B20C891FDDB51D00481C67 /* Constants.swift */,
+				80B20C871FDDB24800481C67 /* LineFoldingGlyphGenerator.swift */,
 				9B07A3F0119E375200FB8F0A /* LineFoldingLayoutManager.h */,
 				9B07A3F1119E375200FB8F0A /* LineFoldingLayoutManager.m */,
-				9B07A3BC119E2C2200FB8F0A /* LineFoldingTypesetter.h */,
-				9B07A3BD119E2C2200FB8F0A /* LineFoldingTypesetter.m */,
-				9B07A3C2119E2FA300FB8F0A /* LineFoldingTextView.h */,
-				9B07A3C3119E2FA300FB8F0A /* LineFoldingTextView.m */,
 				61CD897311A227F4003CB842 /* LineFoldingTextAttachmentCell.h */,
 				61CD897411A227F4003CB842 /* LineFoldingTextAttachmentCell.m */,
-				80B20C871FDDB24800481C67 /* LineFoldingGlyphGenerator.swift */,
+				6173695E11A1FB38003A3B87 /* LineFoldingTextStorage.h */,
+				6173695F11A1FB38003A3B87 /* LineFoldingTextStorage.m */,
+				9B07A3C2119E2FA300FB8F0A /* LineFoldingTextView.h */,
+				9B07A3C3119E2FA300FB8F0A /* LineFoldingTextView.m */,
+				80B20C8B1FDDC45700481C67 /* LineFoldingTypesetter.swift */,
 				80B20C861FDDB24800481C67 /* WWDC_2010_114-Bridging-Header.h */,
-				80B20C891FDDB51D00481C67 /* Constants.swift */,
 			);
 			name = LineFolding;
 			sourceTree = "<group>";
@@ -208,8 +206,8 @@
 				8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */,
 				80B20C8A1FDDB51D00481C67 /* Constants.swift in Sources */,
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				80B20C8C1FDDC45700481C67 /* LineFoldingTypesetter.swift in Sources */,
 				B998122E1199DC8F00455192 /* LineNumbersRulerView.m in Sources */,
-				9B07A3BE119E2C2200FB8F0A /* LineFoldingTypesetter.m in Sources */,
 				9B07A3C4119E2FA300FB8F0A /* LineFoldingTextView.m in Sources */,
 				9B07A3F2119E375200FB8F0A /* LineFoldingLayoutManager.m in Sources */,
 				80B20C881FDDB24800481C67 /* LineFoldingGlyphGenerator.swift in Sources */,
